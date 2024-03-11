@@ -7,9 +7,21 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "rekhadf0311"
 		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
+		"AzureDatabricksDeltaLake1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricksDeltaLake1'"
+		},
 		"Landingandstaging_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'Landingandstaging'"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0311-142455-cgrn9tbc"
 		},
 		"Landingandstaging_properties_typeProperties_url": {
 			"type": "string",
@@ -42,8 +54,17 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"AzureDatabricksDeltaLake1_accessToken": {
+						"value": "[parameters('AzureDatabricksDeltaLake1_accessToken')]"
+					},
 					"Landingandstaging_accountKey": {
 						"value": "[parameters('Landingandstaging_accountKey')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
 					},
 					"Landingandstaging_properties_typeProperties_url": {
 						"value": "[parameters('Landingandstaging_properties_typeProperties_url')]"

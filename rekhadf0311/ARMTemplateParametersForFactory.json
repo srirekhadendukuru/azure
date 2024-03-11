@@ -5,8 +5,17 @@
 		"factoryName": {
 			"value": "rekhadf0311"
 		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureDatabricksDeltaLake1_accessToken": {
+			"value": ""
+		},
 		"Landingandstaging_accountKey": {
 			"value": ""
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "0311-142455-cgrn9tbc"
 		},
 		"Landingandstaging_properties_typeProperties_url": {
 			"value": "https://rekhadls.dfs.core.windows.net/"

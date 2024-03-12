@@ -1,0 +1,63 @@
+{
+	"name": "transformation",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "onlinefood",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "select1"
+				},
+				{
+					"name": "derivedColumn1"
+				},
+				{
+					"name": "alterRow1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Age as string,",
+				"          Gender as string,",
+				"          {Marital Status} as string,",
+				"          Occupation as string,",
+				"          {Monthly Income} as string,",
+				"          {Educational Qualifications} as string,",
+				"          {Family size} as string,",
+				"          latitude as string,",
+				"          longitude as string,",
+				"          {Pin code} as string,",
+				"          Output as string,",
+				"          Feedback as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 select(mapColumn(",
+				"          Age,",
+				"          Gender,",
+				"          {Marital Status},",
+				"          Occupation,",
+				"          {Monthly Income},",
+				"          {Educational Qualifications},",
+				"          {Family size},",
+				"          {Pin code},",
+				"          Feedback",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 derive(Feedback = upper(Feedback)) ~> derivedColumn1",
+				"derivedColumn1 alterRow(updateIf(ERROR_FUNCTION('Marital Status == unknown'))) ~> alterRow1"
+			]
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"name": "rekhadf",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "21701864-2b97-466c-bb81-4e7923dc98c5",
+		"tenantId": "b6417cd0-1f73-4471-9a39-20953822a34a"
+	}
+}
